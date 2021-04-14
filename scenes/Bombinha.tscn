@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/Bombinha.gd" type="Script" id=1]
+[ext_resource path="res://assets/Enemies/Bombinha/bombinha_andando_frames/pixil-frame-2.png" type="Texture" id=2]
+[ext_resource path="res://assets/Enemies/Bombinha/bombinha_andando_frames/pixil-frame-4.png" type="Texture" id=3]
+[ext_resource path="res://assets/Enemies/Bombinha/bombinha_andando_frames/pixil-frame-3.png" type="Texture" id=4]
+[ext_resource path="res://assets/Enemies/Bombinha/bombinha_andando_frames/pixil-frame-1.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[node name="Bombinha" type="KinematicBody2D"]
+position = Vector2( 0, -0.15177 )
+collision_mask = 0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )
+animation = "walk"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -9.82731, 23.855, 0.767324, 15.1145, 1.03219, 7.9631, 6.06464, 3.19551, 11.7593, 3.06308, 13.7457, 5.44687, 16.1295, 3.19551, 21.6917, 3.72525, 23.9431, 7.83067, 25.5323, 11.1415, 25.3998, 13.7901, 23.4133, 15.7766, 19.7052, 18.028, 14.6728, 18.028, 10.1701, 15.9091, 10.5674, 20.8091, 16.1295, 24.5172, 17.8512, 30.0794, 17.7187, 39.4821, 13.3484, 42.6605, 13.6133, 44.9119, 15.4674, 46.6335, 15.4674, 48.7524, 11.362, 53.1227, 4.87274, 52.8578, -5.19216, 52.9903, -7.04622, 50.7389, -7.17865, 47.8254, -3.47053, 45.0443, -5.45702, 42.6605, -7.84081, 41.4686, -8.10568, 38.6875, -10.2246, 37.0983 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

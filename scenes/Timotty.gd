@@ -3,6 +3,10 @@ extends KinematicBody2D
 const UP = Vector2(0, -1)
 var motion = Vector2()
 export var gravity = 10
+var screen_size
+
+func _ready():
+	screen_size = get_viewport_rect().size
 
 func _physics_process(delta):
 	motion.y += gravity 
@@ -27,4 +31,7 @@ func _physics_process(delta):
 		$AnimatedSprite.flip_h = motion.x < 0
 	
 	motion = move_and_slide(motion, UP)
-	pass
+	
+	position += motion * delta
+	position.x = clamp(position.x, 0, screen_size.x)
+	position.y = clamp(position.y, 0, screen_size.y)

@@ -1,12 +1,21 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/Map/floor.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Timotty.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Map.gd" type="Script" id=3]
+[ext_resource path="res://scenes/Bombinha.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 512.362, 98.5072 )
+extents = Vector2( 552.97, 98.5072 )
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1920, 0, 0, 0, 0, 0, 1920, 128, 0, 0, 0, 0, 0, 128, 0, 0, 0, 0, 0, 0 )
+}
 
 [node name="Map" type="Node"]
+script = ExtResource( 3 )
+Bombinha = ExtResource( 4 )
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2( 960.177, 788.472 )
@@ -23,3 +32,12 @@ position = Vector2( -1.25977, 191.27 )
 shape = SubResource( 1 )
 
 [node name="Timotty" parent="." instance=ExtResource( 2 )]
+
+[node name="BombinhaPath" type="Path2D" parent="."]
+curve = SubResource( 2 )
+
+[node name="BombinhaSpawnLocation" type="PathFollow2D" parent="BombinhaPath"]
+
+[node name="BombinhaTimer" type="Timer" parent="."]
+autostart = true
+[connection signal="timeout" from="BombinhaTimer" to="." method="_on_BombinhaTimer_timeout"]
