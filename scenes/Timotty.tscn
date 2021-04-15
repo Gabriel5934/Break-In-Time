@@ -26,7 +26,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Timotty" type="KinematicBody2D"]
+[node name="Timotty" type="KinematicBody2D" groups=[
+"Player",
+]]
 position = Vector2( 55.0929, 55.0508 )
 collision_layer = 2
 collision_mask = 5

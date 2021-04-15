@@ -1,6 +1,9 @@
 extends KinematicBody2D
 
+signal felt_in_void
+
 const UP = Vector2(0, -1)
+
 var motion = Vector2()
 export var gravity = 10
 var screen_size
@@ -34,10 +37,11 @@ func _physics_process(delta):
 
 	position += motion * delta
 	position.x = clamp(position.x, 0, screen_size.x)
-	position.y = clamp(position.y, 0, screen_size.y)
+	#position.y = clamp(position.y, 0, screen_size.y)
 	
 
 
 func _on_VisibilityNotifier2D_screen_exited():
+	emit_signal("felt_in_void")
 	queue_free()
 	
