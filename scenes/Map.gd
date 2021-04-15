@@ -7,7 +7,7 @@ func _ready():
 
 func _on_BombinhaTimer_timeout():
 	randomize()
-	
+
 	$BombinhaPath/BombinhaSpawnLocation.offset = randi()
 	var bombinha = Bombinha.instance()
 	add_child(bombinha)

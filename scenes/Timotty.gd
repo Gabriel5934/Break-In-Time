@@ -31,7 +31,13 @@ func _physics_process(delta):
 		$AnimatedSprite.flip_h = motion.x < 0
 	
 	motion = move_and_slide(motion, UP)
-	
+
 	position += motion * delta
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
+	
+
+
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()
+	
