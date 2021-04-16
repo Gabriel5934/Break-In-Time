@@ -16,21 +16,16 @@ _global_script_class_icons={
 [application]
 
 config/name="Break In Time"
-run/main_scene="res://scenes/Map.tscn"
+run/main_scene="res://scenes/GUI/Menu.tscn"
 config/icon="res://icon.png"
 
 [display]
 
 window/size/width=1920
 window/size/height=1080
-<<<<<<< HEAD
 window/size/fullscreen=true
 window/stretch/mode="2d"
-window/stretch/aspect="expand"
-=======
-window/stretch/mode="2d"
 window/stretch/aspect="keep"
->>>>>>> 8378331 (Added a Home Screen)
 
 [layer_names]
 
