@@ -1,9 +1,13 @@
 extends KinematicBody2D
 
+<<<<<<< HEAD
 signal felt_in_void
 
 const UP = Vector2(0, -1)
 
+=======
+const UP = Vector2(0, -1)
+>>>>>>> 8378331 (Added a Home Screen)
 var motion = Vector2()
 export var gravity = 10
 var screen_size
@@ -19,7 +23,11 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("ui_left"):
 		motion.x = -100
 	else:
+<<<<<<< HEAD
 		motion.x = 0
+=======
+		motion.x = 0 
+>>>>>>> 8378331 (Added a Home Screen)
 		$AnimatedSprite.animation = "idle"
 		$AnimatedSprite.play()
 	
@@ -37,11 +45,18 @@ func _physics_process(delta):
 
 	position += motion * delta
 	position.x = clamp(position.x, 0, screen_size.x)
+<<<<<<< HEAD
 	#position.y = clamp(position.y, 0, screen_size.y)
+=======
+	position.y = clamp(position.y, 0, screen_size.y)
+>>>>>>> 8378331 (Added a Home Screen)
 	
 
 
 func _on_VisibilityNotifier2D_screen_exited():
+<<<<<<< HEAD
 	emit_signal("felt_in_void")
+=======
+>>>>>>> 8378331 (Added a Home Screen)
 	queue_free()
 	
