@@ -1,6 +1,7 @@
 extends Node
 
 export (PackedScene) var Bombinha
+<<<<<<< HEAD
 export (PackedScene) var Timotty
 var last_position
 
@@ -49,3 +50,19 @@ func _on_LostCanvasLayer_try_again():
 
 func _on_TipsCanvasLayer_tips_closed():
 	game_start()
+=======
+
+func _ready():
+	pass
+
+func _on_BombinhaTimer_timeout():
+	randomize()
+
+	$BombinhaPath/BombinhaSpawnLocation.offset = randi()
+	var bombinha = Bombinha.instance()
+	add_child(bombinha)
+	# Set the mob's direction perpendicular to the path direction.
+	var direction = $BombinhaPath/BombinhaSpawnLocation.rotation + PI / 2
+	# Set the mob's position to a random location.
+	bombinha.position = $BombinhaPath/BombinhaSpawnLocation.position
+>>>>>>> 8378331 (Added a Home Screen)

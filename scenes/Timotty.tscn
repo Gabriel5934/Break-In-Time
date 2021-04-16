@@ -26,9 +26,13 @@ animations = [ {
 "speed": 5.0
 } ]
 
+<<<<<<< HEAD
 [node name="Timotty" type="KinematicBody2D" groups=[
 "Player",
 ]]
+=======
+[node name="Timotty" type="KinematicBody2D"]
+>>>>>>> 8378331 (Added a Home Screen)
 position = Vector2( 55.0929, 55.0508 )
 collision_layer = 2
 collision_mask = 5
