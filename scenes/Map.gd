@@ -2,6 +2,9 @@ extends Node
 
 export (PackedScene) var Bombinha
 export (PackedScene) var Timotty
+export (PackedScene) var Quiz
+
+var score = 0
 var last_position
 
 func _ready():
@@ -9,6 +12,7 @@ func _ready():
 	
 func game_start():
 	$BombinhaTimer.start()
+	$ScoreTimer.start()
 	var timotty = Timotty.instance()
 	add_child(timotty)
 	timotty.connect("felt_in_void", self, "player_died")
@@ -44,8 +48,20 @@ func player_died():
 
 
 func _on_LostCanvasLayer_try_again():
+	$Scoreboard.text = "0"
+	score = 0
 	game_start()
 
 
 func _on_TipsCanvasLayer_tips_closed():
 	game_start()
+
+func _on_Close_pressed():
+	$TipsPanel.hide()
+	emit_signal("tips_closed")
+
+func _on_ScoreTimer_timeout():
+	score += 1
+	$Scoreboard.text = str(score)
+	if score == 5:
+		get_tree().change_scene_to(Quiz)
