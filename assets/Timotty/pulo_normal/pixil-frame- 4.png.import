@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pixil-frame-2.png-98865fa57828245ab65676c78e31ee5b.stex"
+path="res://.import/pixil-frame- 4.png-f39fa1f3335cf1a14198d5f5eda93873.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Timotty/timotty_andando_frames/pixil-frame-2.png"
-dest_files=[ "res://.import/pixil-frame-2.png-98865fa57828245ab65676c78e31ee5b.stex" ]
+source_file="res://assets/Timotty/pulo_normal/pixil-frame- 4.png"
+dest_files=[ "res://.import/pixil-frame- 4.png-f39fa1f3335cf1a14198d5f5eda93873.stex" ]
 
 [params]
 

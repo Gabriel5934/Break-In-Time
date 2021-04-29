@@ -6,12 +6,12 @@
 [ext_resource path="res://assets/Timotty/timotty_parado_feliz_frames/pixil-frame-2.png" type="Texture" id=4]
 [ext_resource path="res://assets/Timotty/timotty_parado_feliz_frames/pixil-frame-4.png" type="Texture" id=5]
 [ext_resource path="res://scenes/Timotty.gd" type="Script" id=6]
-[ext_resource path="res://assets/Timotty/timotty_andando_frames/pixil-frame-3.png" type="Texture" id=7]
-[ext_resource path="res://assets/Timotty/timotty_andando_frames/pixil-frame-6.png" type="Texture" id=8]
-[ext_resource path="res://assets/Timotty/timotty_andando_frames/pixil-frame-2.png" type="Texture" id=9]
-[ext_resource path="res://assets/Timotty/timotty_andando_frames/pixil-frame-1.png" type="Texture" id=10]
-[ext_resource path="res://assets/Timotty/timotty_andando_frames/pixil-frame-4.png" type="Texture" id=11]
-[ext_resource path="res://assets/Timotty/timotty_andando_frames/pixil-frame-5.png" type="Texture" id=12]
+[ext_resource path="res://assets/Timotty/timotty_andando_frames/pixil-frame- 6.png" type="Texture" id=7]
+[ext_resource path="res://assets/Timotty/timotty_andando_frames/pixil-frame- 5.png" type="Texture" id=8]
+[ext_resource path="res://assets/Timotty/timotty_andando_frames/pixil-frame- 4.png" type="Texture" id=9]
+[ext_resource path="res://assets/Timotty/timotty_andando_frames/pixil-frame- 1.png" type="Texture" id=10]
+[ext_resource path="res://assets/Timotty/timotty_andando_frames/pixil-frame- 2.png" type="Texture" id=11]
+[ext_resource path="res://assets/Timotty/timotty_andando_frames/pixil-frame- 3.png" type="Texture" id=12]
 [ext_resource path="res://assets/Timotty/pulo_e_tiro/frame_4.png" type="Texture" id=13]
 [ext_resource path="res://assets/Timotty/pulo_e_tiro/frame_5.png" type="Texture" id=14]
 [ext_resource path="res://assets/Timotty/pulo_e_tiro/frame_1.png" type="Texture" id=15]
@@ -26,19 +26,24 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 18 ), ExtResource( 15 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 13 ), ExtResource( 14 ) ],
-"loop": true,
-"name": "jump_shot",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 13 ) ],
 "loop": true,
 "name": "fall",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 15 ), ExtResource( 17 ), ExtResource( 16 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "jump_shot",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "jump",
 "speed": 5.0
 } ]
 
@@ -53,7 +58,7 @@ script = ExtResource( 6 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 1.9071, -7.0508 )
 frames = SubResource( 1 )
-animation = "fall"
+animation = "jump"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -10.0929, 34.9492, 19.9071, 34.9492, 25.9071, 25.9492, 25.9071, 19.9492, 22.9071, 16.9492, 19.9071, 16.9492, 19.9071, 4.9492, 25.9071, 4.9492, 28.9071, 1.9492, 28.9071, -4.0508, 16.9071, -16.0508, 16.9071, -25.0508, 19.9071, -25.0508, 19.9071, -46.0508, 16.9071, -46.0508, 16.9071, -58.0508, 7.9071, -67.0508, -1.0929, -67.0508, -7.0929, -61.0508, -10.0929, -61.0508, -13.0929, -64.0508, -22.0929, -64.0508, -31.0929, -55.0508, -31.0929, -52.0508, -28.0929, -49.0508, -16.0929, -49.0508, -16.0929, -43.0508, -16.0929, -28.0508, -13.0929, -22.0508, -13.0929, -19.0508, -19.0929, -16.0508, -31.0929, -4.0508, -31.0929, 1.9492, -28.0929, 4.9492, -22.0929, 4.9492, -19.0929, 1.9492, -19.0929, 16.9492, -22.0929, 19.9492, -22.0929, 28.9492, -16.0929, 34.9492 )
