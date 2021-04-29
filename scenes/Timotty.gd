@@ -32,7 +32,7 @@ func _physics_process(delta):
 		motion.y = -400
 		
 	if !is_grounded and Input.is_action_just_pressed("ui_up"):
-		$AnimatedSprite.animation = "jump_shot"
+		$AnimatedSprite.animation = "jump"
 		
 		
 
@@ -44,7 +44,7 @@ func _physics_process(delta):
 		$AnimatedSprite.flip_h = motion.x < 0
 		
 	if !is_grounded :
-		$AnimatedSprite.animation = "jump_shot"
+		$AnimatedSprite.animation = "jump"
 		
 		
 	motion = move_and_slide(motion, UP)
