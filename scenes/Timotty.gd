@@ -33,7 +33,8 @@ func _physics_process(delta):
 		
 	if !is_grounded :
 		$AnimatedSprite.animation = "jump"	
-		
+		$AnimatedSprite.flip_v = false
+		$AnimatedSprite.flip_h = motion.x < 0
 	
 	if is_grounded and motion.x != 0  :
 		$AnimatedSprite.animation = "walk"

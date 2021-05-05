@@ -20,4 +20,5 @@ func _on_WrongButton_pressed():
 	$RightSprite.modulate.g = 0.7
 	$RightSprite.modulate.b = 0.7
 	
+	print("bbbbbbbbbbb")
 	get_tree().quit()
