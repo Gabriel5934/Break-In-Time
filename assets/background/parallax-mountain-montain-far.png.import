@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pixil-frame-3.png-d6baa754772df96c7750915fe2a8d43d.stex"
+path="res://.import/parallax-mountain-montain-far.png-92763e80b832b7cacced66aae6089df3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Timotty/timotty_andando_frames/pixil-frame-3.png"
-dest_files=[ "res://.import/pixil-frame-3.png-d6baa754772df96c7750915fe2a8d43d.stex" ]
+source_file="res://assets/background/parallax-mountain-montain-far.png"
+dest_files=[ "res://.import/parallax-mountain-montain-far.png-92763e80b832b7cacced66aae6089df3.stex" ]
 
 [params]
 

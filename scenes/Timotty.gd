@@ -28,23 +28,19 @@ func _physics_process(delta):
 			$AnimatedSprite.play()
 	
 	
-	if Input.is_action_just_pressed("ui_up"):
+	if Input.is_action_just_pressed("ui_up") and is_grounded:
 		motion.y = -400
 		
-	if !is_grounded and Input.is_action_just_pressed("ui_up"):
-		$AnimatedSprite.animation = "jump_shot"
-		
-		
-
+	if !is_grounded :
+		$AnimatedSprite.animation = "jump"	
+		$AnimatedSprite.flip_v = false
+		$AnimatedSprite.flip_h = motion.x < 0
 	
 	if is_grounded and motion.x != 0  :
 		$AnimatedSprite.animation = "walk"
 		$AnimatedSprite.flip_v = false
 		# See the note below about boolean assignment
 		$AnimatedSprite.flip_h = motion.x < 0
-		
-	if !is_grounded :
-		$AnimatedSprite.animation = "jump_shot"
 		
 		
 	motion = move_and_slide(motion, UP)

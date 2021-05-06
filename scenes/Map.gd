@@ -3,6 +3,7 @@ extends Node
 export (PackedScene) var Bombinha
 export (PackedScene) var Timotty
 export (PackedScene) var Quiz
+export (PackedScene) var quizbuttom
 
 var score = 0
 var last_position
@@ -63,5 +64,5 @@ func _on_Close_pressed():
 func _on_ScoreTimer_timeout():
 	score += 1
 	$Scoreboard.text = str(score)
-	if score == 5:
+	if score == 15:
 		get_tree().change_scene_to(Quiz)
