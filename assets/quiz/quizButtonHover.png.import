@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/quizButtonHover.png-e7f8b0ef469c3dbf0491f3cdf962cb9d.stex"
+path="res://.import/quizButtonHover.png-46cb2d7b77d5fb3303c1af29b989247b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Quiz/quizButtonHover.png"
-dest_files=[ "res://.import/quizButtonHover.png-e7f8b0ef469c3dbf0491f3cdf962cb9d.stex" ]
+source_file="res://assets/quiz/quizButtonHover.png"
+dest_files=[ "res://.import/quizButtonHover.png-46cb2d7b77d5fb3303c1af29b989247b.stex" ]
 
 [params]
 
