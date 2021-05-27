@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/quizbutton.png-da574b44bbc3f2aec9285019bcdb6f7d.stex"
+path="res://.import/item2.png-c0be5323e053d97f8d7cd873a5d72021.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/quiz/quizbutton.png"
-dest_files=[ "res://.import/quizbutton.png-da574b44bbc3f2aec9285019bcdb6f7d.stex" ]
+source_file="res://assets/item/item2.png"
+dest_files=[ "res://.import/item2.png-c0be5323e053d97f8d7cd873a5d72021.stex" ]
 
 [params]
 
