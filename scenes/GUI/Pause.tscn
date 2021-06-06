@@ -1,13 +1,29 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/Fonts/PressStart2P.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/GUI/Pause.gd" type="Script" id=2]
+[ext_resource path="res://assets/pause/buttom/continue.png" type="Texture" id=3]
+[ext_resource path="res://assets/pause/gif/pixil-frame-3.png" type="Texture" id=4]
+[ext_resource path="res://assets/pause/gif/pixil-frame-4.png" type="Texture" id=5]
+[ext_resource path="res://assets/pause/gif/pixil-frame-0.png" type="Texture" id=6]
+[ext_resource path="res://assets/pause/gif/pixil-frame-1.png" type="Texture" id=7]
+[ext_resource path="res://assets/pause/gif/pixil-frame-5.png" type="Texture" id=8]
+[ext_resource path="res://assets/pause/gif/pixil-frame-2.png" type="Texture" id=9]
+[ext_resource path="res://assets/pause/buttom/sair.png" type="Texture" id=10]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "menu",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=2]
 size = 64
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 64
 font_data = ExtResource( 1 )
 
@@ -16,46 +32,70 @@ pause_mode = 2
 script = ExtResource( 2 )
 
 [node name="PausePanel" type="Panel" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_left = 0.510677
+anchor_top = 0.579731
+anchor_right = 0.510677
+anchor_bottom = 0.579731
 margin_left = -284.5
 margin_top = -170.109
 margin_right = 284.5
 margin_bottom = 171.891
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="PausePanel"]
+position = Vector2( 264.667, 86 )
+scale = Vector2( 3.36842, 3.18824 )
+frames = SubResource( 1 )
+animation = "menu"
+frame = 3
+speed_scale = 0.5
+playing = true
+
 [node name="Resume" type="Button" parent="PausePanel"]
+self_modulate = Color( 0.756863, 0.756863, 0.756863, 1 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -198.0
-margin_top = -117.5
-margin_right = 198.0
-margin_bottom = -36.5
-custom_fonts/font = SubResource( 1 )
+margin_left = -276.5
+margin_top = -75.0005
+margin_right = 235.5
+margin_bottom = 52.9995
+custom_fonts/font = SubResource( 2 )
 text = "Resume"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite" type="Sprite" parent="PausePanel/Resume"]
+position = Vector2( 260, 59.9995 )
+scale = Vector2( 2.49302, 3.6 )
+texture = ExtResource( 3 )
 
 [node name="Quit" type="Button" parent="PausePanel"]
 anchor_left = 0.5
 anchor_top = 0.763
 anchor_right = 0.5
 anchor_bottom = 0.763
-margin_left = -166.5
-margin_top = -40.37
-margin_right = 166.5
-margin_bottom = 40.63
-custom_fonts/font = SubResource( 2 )
+margin_left = -204.5
+margin_top = 83.0535
+margin_right = 168.5
+margin_bottom = 180.053
+custom_fonts/font = SubResource( 3 )
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite" type="Sprite" parent="PausePanel/Quit"]
+position = Vector2( 190.563, 46.3766 )
+scale = Vector2( 2.61797, 2.72078 )
+texture = ExtResource( 10 )
+[connection signal="mouse_entered" from="PausePanel/Resume" to="." method="_on_Resume_mouse_entered"]
+[connection signal="mouse_exited" from="PausePanel/Resume" to="." method="_on_Resume_mouse_exited"]
 [connection signal="pressed" from="PausePanel/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="mouse_entered" from="PausePanel/Quit" to="." method="_on_Quit_mouse_entered"]
+[connection signal="mouse_exited" from="PausePanel/Quit" to="." method="_on_Quit_mouse_exited"]
 [connection signal="pressed" from="PausePanel/Quit" to="." method="_on_Quit_pressed"]
