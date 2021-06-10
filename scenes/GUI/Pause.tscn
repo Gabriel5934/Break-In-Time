@@ -45,11 +45,11 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="PausePanel"]
-position = Vector2( 264.667, 86 )
-scale = Vector2( 3.36842, 3.18824 )
+position = Vector2( 260.333, 82.0002 )
+scale = Vector2( 3.38363, 3.21177 )
 frames = SubResource( 1 )
 animation = "menu"
-frame = 3
+frame = 4
 speed_scale = 0.5
 playing = true
 
