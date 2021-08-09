@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/pause/buttom/continue.png" type="Texture" id=1]
+
+[node name="TextureButton" type="TextureButton"]
+margin_left = 628.0
+margin_top = 240.0
+margin_right = 831.0
+margin_bottom = 275.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="continue" type="Sprite" parent="."]
+position = Vector2( 102.597, 16.5612 )
+texture = ExtResource( 1 )
