@@ -80,4 +80,17 @@ enabled = true
 [node name="raycast2" type="RayCast2D" parent="raycast"]
 position = Vector2( -15.0929, -13.5636 )
 enabled = true
+
+[node name="Camera" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.6, 0.6 )
+limit_left = -100
+limit_top = -100000
+limit_right = 1920
+limit_bottom = 900
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+editor_draw_limits = true
+editor_draw_drag_margin = true
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
